@@ -2,6 +2,7 @@ window.onload = function() {
     loadTodos();
     loadNotes();
     setupBackButton();
+    registerServiceWorker();
 };
 
 function setupBackButton() {
@@ -37,16 +38,14 @@ function createTodo(text, completed) {
     li.appendChild(textNode);
     li.classList.toggle('done', completed);
 
-    // Set click event for the entire list item, but avoid it if clicking icons
-    li.addEventListener('click', () => {
+    li.addEventListener('click', (event) => {
         if (!event.target.classList.contains('icon') && !event.target.classList.contains('delete-icon')) {
             openDetailedNote(text);
         }
     });
 
-    // Separate handlers for icons
     icon.onclick = function(event) {
-        event.stopPropagation(); // Prevent triggering li's click event
+        event.stopPropagation();
         toggleCompletion(li, icon);
     };
 
@@ -82,7 +81,7 @@ function maybeAddDeleteIcon(li) {
         trashIcon.textContent = 'delete';
         li.appendChild(trashIcon);
         trashIcon.onclick = function(event) {
-            event.stopPropagation(); // Stop the li click event from firing
+            event.stopPropagation();
             li.remove();
             saveTodos();
         };
@@ -117,4 +116,14 @@ function saveTodos() {
         });
     });
     localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+            console.log('Service Worker registration failed:', error);
+        });
+    }
 }

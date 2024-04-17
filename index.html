@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Higher Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <i class="material-icons">arrow_upward</i> 
+        Higher Notes
+    </header>
+    
+    <div id="tabs">
+        <div class="tab active" onclick="switchTab('note1')">Tasks</div>
+        <div class="tab" onclick="switchTab('note2')">Home</div>
+    </div>
+    <div id="note1" class="content active">
+        <h2>Tasks</h2>
+        <ul id="todoList"></ul>
+        <input type="text" id="newTodo" placeholder="Add new todo..." onkeypress="addTodo(event)">
+        <h3>Completed</h3>
+        <ul id="completedTodos"></ul>
+    </div>
+    <textarea id="note2" class="content"></textarea>
+    <div id="noteDetails" class="content">
+        <button id="backButton" class="material-icons fab">arrow_back</button>
+        <h2 id="noteTitle"></h2>
+        <textarea id="detailedNote"></textarea>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

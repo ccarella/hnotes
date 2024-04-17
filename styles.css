@@ -10,15 +10,18 @@ body {
 }
 
 header {
-    background-color: #6200EA; /* Primary color */
-    color: #FFFFFF;
+    background-color: #4CAF50; /* Set to a green shade */
+    color: white; /* Set text color to white */
     text-align: left;
     padding: 16px 24px;
     font-size: 24px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
+    font-family: 'Helvetica', sans-serif; /* Continue using Helvetica or another sans-serif font */
+    font-weight: bold;
 }
+
 
 .material-icons {
     margin-right: 16px;
@@ -63,7 +66,7 @@ input[type="text"] {
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid #6200EA; /* Match header color */
+    border-bottom: 2px solid #4CAF50; /* Match header color */
     transition: border-color 0.2s;
 }
 

@@ -10,130 +10,73 @@ body {
 }
 
 header {
-    background-color: #4CAF50; /* Set to a green shade */
-    color: white; /* Set text color to white */
+    background-color: #4CAF50; /* Green background */
+    color: white;
     text-align: left;
-    padding: 16px 24px;
-    font-size: 24px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 16px;
+    font-size: 20px; /* Slightly smaller font size for mobile */
     display: flex;
     align-items: center;
-    font-family: 'Helvetica', sans-serif; /* Continue using Helvetica or another sans-serif font */
+    justify-content: center;
+    font-family: 'Helvetica', sans-serif;
     font-weight: bold;
 }
 
-
 .material-icons {
-    margin-right: 16px;
-    font-size: 32px;
+    font-size: 24px;
+    margin-right: 10px;
 }
 
 #tabs {
     display: flex;
-    justify-content: start; /* Align tabs to the left */
+    justify-content: space-around; /* Ensure tabs are evenly spaced */
     background-color: #EEE;
     box-shadow: 0 2px 2px rgba(0,0,0,0.1);
 }
 
 .tab {
+    flex-grow: 1; /* Each tab takes equal width */
+    text-align: center; /* Center text in tabs */
+    padding: 12px;
+    font-size: 16px; /* Smaller font size for tabs */
     cursor: pointer;
-    padding: 16px 24px;
-    transition: background-color 0.3s;
-}
-
-.tab:hover {
-    background-color: #CCC;
 }
 
 .tab.active {
-    background-color: #BBB;
+    background-color: #CCC;
 }
 
 .content {
-    padding: 20px;
-    flex-grow: 1;
+    padding: 10px;
     overflow-y: auto;
-    display: none; /* Hide all content sections by default */
 }
 
-.content.active {
-    display: block; /* Only show the active content */
-}
-
-input[type="text"] {
+textarea, input[type="text"] {
     width: 100%;
     padding: 8px;
-    margin: 8px 0;
-    box-sizing: border-box;
+    font-size: 16px; /* Larger font size for easier reading on small screens */
     border: none;
-    border-bottom: 2px solid #4CAF50; /* Match header color */
-    transition: border-color 0.2s;
-}
-
-input[type="text"]:focus {
-    outline: none;
-    border-color: #3700B3; /* Darker primary color */
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.1s;
-}
-
-li:hover {
-    transform: scale(1.02);
-}
-
-li.done span { /* Only apply strikethrough to the text span within .done */
-    text-decoration: line-through;
-    color: #9E9E9E;
-}
-
-.delete-icon {
-    margin-left: auto;
-    color: #f44336; /* Material Design's red color for delete icons */
-    cursor: pointer;
-}
-
-.fab {
-    position: fixed; /* Fixed position relative to the viewport */
-    bottom: 20px;    /* Positioned towards the bottom of the viewport */
-    right: 20px;     /* Positioned towards the right of the viewport */
-    background-color: #6200EA; /* Primary color for visibility */
-    color: white;
-    border: none;
-    border-radius: 50%; /* Circular shape */
-    width: 56px;    /* Standard size for FABs */
-    height: 56px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
-    z-index: 100;   /* Ensure it's above other content */
-}
-
-.fab:hover {
-    background-color: #3700B3; /* Darker shade when hovered */
-}
-
-textarea {
-    width: 100%;
-    height: 100%;
-    padding: 16px;
-    box-sizing: border-box;
-    border: none;
+    border-bottom: 2px solid #4CAF50; /* Stylish underline */
     background: none;
-    font-size: 16px;
-    resize: none; /* Disable resizing */
+    resize: none; /* Disable resizing for textarea */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    header {
+        padding: 12px 5px; /* Less padding on smaller screens */
+        font-size: 18px; /* Smaller header font size */
+    }
+
+    .material-icons {
+        font-size: 20px; /* Smaller icons */
+    }
+
+    #tabs .tab {
+        padding: 10px 5px; /* Smaller padding in tabs */
+    }
+
+    textarea, input[type="text"] {
+        font-size: 14px; /* Smaller text areas and inputs */
+    }
 }

@@ -13,70 +13,121 @@ header {
     background-color: #4CAF50; /* Green background */
     color: white;
     text-align: left;
-    padding: 16px;
-    font-size: 20px; /* Slightly smaller font size for mobile */
+    padding: 16px 24px;
+    font-size: 24px; /* Adjust size as needed */
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Helvetica', sans-serif; /* Set Helvetica as the font */
     font-weight: bold;
 }
 
 .material-icons {
-    font-size: 24px;
-    margin-right: 10px;
+    margin-right: 16px;
+    font-size: 32px;
 }
 
 #tabs {
     display: flex;
-    justify-content: space-around; /* Ensure tabs are evenly spaced */
+    justify-content: start; /* Align tabs to the left */
     background-color: #EEE;
     box-shadow: 0 2px 2px rgba(0,0,0,0.1);
 }
 
 .tab {
-    flex-grow: 1; /* Each tab takes equal width */
-    text-align: center; /* Center text in tabs */
-    padding: 12px;
-    font-size: 16px; /* Smaller font size for tabs */
     cursor: pointer;
+    padding: 16px 24px;
+    transition: background-color 0.3s;
 }
 
-.tab.active {
+.tab:hover {
     background-color: #CCC;
 }
 
-.content {
-    padding: 10px;
-    overflow-y: auto;
+.tab.active {
+    background-color: #BBB;
 }
 
-textarea, input[type="text"] {
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: none; /* Hide all content sections by default */
+}
+
+.content.active {
+    display: block; /* Only show the active content */
+}
+
+input[type="text"] {
     width: 100%;
     padding: 8px;
-    font-size: 16px; /* Larger font size for easier reading on small screens */
+    margin: 8px 0;
+    box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid #4CAF50; /* Stylish underline */
-    background: none;
-    resize: none; /* Disable resizing for textarea */
+    border-bottom: 2px solid #6200EA; /* Match header color */
+    transition: border-color 0.2s;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    header {
-        padding: 12px 5px; /* Less padding on smaller screens */
-        font-size: 18px; /* Smaller header font size */
-    }
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3700B3; /* Darker primary color */
+}
 
-    .material-icons {
-        font-size: 20px; /* Smaller icons */
-    }
+ul {
+    list-style: none;
+    padding: 0;
+}
 
-    #tabs .tab {
-        padding: 10px 5px; /* Smaller padding in tabs */
-    }
+li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.1s;
+}
 
-    textarea, input[type="text"] {
-        font-size: 14px; /* Smaller text areas and inputs */
-    }
+li:hover {
+    transform: scale(1.02);
+}
+
+li.done span { /* Only apply strikethrough to the span within .done */
+    text-decoration: line-through;
+    color: #9E9E9E;
+}
+
+.delete-icon {
+    margin-left: auto;
+    color: #f44336; /* Material Design's red color for delete icons */
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    font-size: 16px;
+    resize: none; /* Disable resizing */
+}
+
+.fab {
+    display: none; /* Hide by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Matching the header */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 56px;  /* Standard FAB size */
+    height: 56px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }

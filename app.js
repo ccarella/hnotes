@@ -3,11 +3,14 @@ window.onload = function() {
     loadNotes();
     setupBackButton();
     registerServiceWorker();
+    // Hide non-active sections on initial load
+    switchTab('note1'); // Set 'note1' as the default active tab
 };
 
 function setupBackButton() {
     document.getElementById('backButton').addEventListener('click', function() {
-        switchTab('note1');
+        switchTab('note1'); // Switch back to the todos list
+        this.style.display = 'none'; // Hide the back button when not needed
     });
 }
 
@@ -16,7 +19,26 @@ function loadNotes() {
     document.getElementById('note2').addEventListener('input', function() {
         localStorage.setItem('note2', this.value);
     });
+    document.getElementById('backButton').style.display = 'none'; // Initially hide the back button
 }
+
+function switchTab(tabName) {
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        if (content.id === tabName) {
+            content.classList.add('active');
+            content.style.display = 'block'; // Show the active content
+        } else {
+            content.classList.remove('active');
+            content.style.display = 'none'; // Hide the inactive content
+        }
+    });
+    // Hide the back button unless it's the detailed note view
+    document.getElementById('backButton').style.display = (tabName === 'noteDetails') ? 'block' : 'none';
+}
+
+// Other functions remain unchanged...
+
 
 function addTodo(event) {
     if (event.key === "Enter" && event.target.value.trim() !== '') {

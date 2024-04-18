@@ -74,7 +74,7 @@ input[type="text"], textarea {
     padding: 8px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 2px solid #000; /* Maintain black borders for contrast on white */
+    border: 2px solid #FFFFFF; /* Maintain black borders for contrast on white */
     background-color: transparent;
     color: #000;
     font-size: 16px;
@@ -83,7 +83,7 @@ input[type="text"], textarea {
 
 input[type="text"]:focus, textarea:focus {
     outline: none;
-    border-color: #4CAF50; /* Maintain green focus color */
+    border-color: #FFFFFF; 
     background-color: #FFFFFF; /* Ensure background remains white */
 }
 

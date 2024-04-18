@@ -28,7 +28,7 @@ header {
 .material-icons {
     margin-right: 16px;
     font-size: 32px;
-    color: #4CAF50; /* Maintain green accents for icons */
+    color: #000; /* Maintain green accents for icons */
 }
 
 #tabs {

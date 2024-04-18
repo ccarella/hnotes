@@ -131,3 +131,16 @@ textarea {
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
+.back-link {
+    display: block;
+    margin-bottom: 10px;
+    color: #4CAF50; /* Using the app's theme color */
+    font-size: 16px;
+    text-decoration: none; /* Removing underline for a cleaner look */
+    cursor: pointer;
+}
+
+.back-link:hover {
+    text-decoration: underline; /* Add underline on hover for better interaction feedback */
+}

@@ -27,9 +27,12 @@
     <textarea id="note2" class="content"></textarea>
     <div id="noteDetails" class="content">
         <button id="backButton" class="material-icons fab">arrow_back</button>
-        <h2 id="noteTitle"></h2>
+        <!-- Adding a link back to the main todo screen -->
+        <a href="#" id="backToTodos" onclick="switchTab('note1'); return false;" class="back-link">Back to Todos</a>
+        <h2 id="noteTitle">Notes</h2>
         <textarea id="detailedNote"></textarea>
     </div>
+    
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,50 +1,54 @@
 /* Base styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif; /* Clean and modern, better for bold statements */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #FAFAFA;
+    background-color: #FFFFFF; /* White background for the whole app */
+    color: #000; /* Black text for high contrast on white background */
 }
 
 header {
-    background-color: #4CAF50; /* Green background */
-    color: white;
+    background-color: #FFF; /* White header to match the body */
+    color: #000; /* Black text for contrast */
     text-align: left;
     padding: 16px 24px;
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 24px;
     display: flex;
     align-items: center;
-    font-family: 'Helvetica', sans-serif; /* Set Helvetica as the font */
     font-weight: bold;
+    border-bottom: 4px solid #4CAF50; /* Signature green highlight line */
 }
 
 .material-icons {
     margin-right: 16px;
     font-size: 32px;
+    color: #4CAF50; /* Green accents for icons */
 }
 
 #tabs {
     display: flex;
-    justify-content: start; /* Align tabs to the left */
-    background-color: #EEE;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    justify-content: start;
+    background-color: #F0F0F0; /* Slightly off-white for subtle contrast with white */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .tab {
     cursor: pointer;
     padding: 16px 24px;
+    color: #000;
     transition: background-color 0.3s;
+    font-weight: bold;
 }
 
 .tab:hover {
-    background-color: #CCC;
+    background-color: #E0E0E0; /* Light grey for hover */
 }
 
 .tab.active {
-    background-color: #BBB;
+    background-color: #4CAF50; /* Green for active tab */
 }
 
 .content {
@@ -52,25 +56,30 @@ header {
     flex-grow: 1;
     overflow-y: auto;
     display: none; /* Hide all content sections by default */
+    background-color: #FFFFFF; /* White background for content areas */
+    color: #000; /* Black text for readability */
 }
 
 .content.active {
     display: block; /* Only show the active content */
 }
 
-input[type="text"] {
+input[type="text"], textarea {
     width: 100%;
     padding: 8px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid #6200EA; /* Match header color */
-    transition: border-color 0.2s;
+    border: 2px solid #000; /* Black borders for contrast on white */
+    background-color: transparent;
+    color: #000;
+    font-size: 16px;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus, textarea:focus {
     outline: none;
-    border-color: #3700B3; /* Darker primary color */
+    border-color: #4CAF50; /* Green focus color */
+    background-color: #FFFFFF; /* Ensure background remains white */
 }
 
 ul {
@@ -83,47 +92,35 @@ li {
     align-items: center;
     padding: 10px;
     margin-bottom: 5px;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; /* White background for list items */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.1s;
 }
 
 li:hover {
-    transform: scale(1.02);
+    transform: scale(1.05); /* More pronounced hover effect */
 }
 
-li.done span { /* Only apply strikethrough to the span within .done */
+li.done span {
     text-decoration: line-through;
     color: #9E9E9E;
 }
 
 .delete-icon {
     margin-left: auto;
-    color: #f44336; /* Material Design's red color for delete icons */
+    color: #FF0000; /* Bright red for delete icons */
     cursor: pointer;
 }
 
-textarea {
-    width: 100%;
-    height: 100%;
-    padding: 16px;
-    box-sizing: border-box;
-    border: none;
-    background: none;
-    font-size: 16px;
-    resize: none; /* Disable resizing */
-}
-
 .fab {
-    display: none; /* Hide by default */
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #4CAF50; /* Matching the header */
-    color: white;
+    background-color: #4CAF50; /* Green */
+    color: #000;
     border: none;
     border-radius: 50%;
-    width: 56px;  /* Standard FAB size */
+    width: 56px;
     height: 56px;
     cursor: pointer;
     display: flex;
@@ -135,12 +132,12 @@ textarea {
 .back-link {
     display: block;
     margin-bottom: 10px;
-    color: #4CAF50; /* Using the app's theme color */
+    color: #4CAF50; /* Green link */
     font-size: 16px;
-    text-decoration: none; /* Removing underline for a cleaner look */
+    text-decoration: none;
     cursor: pointer;
 }
 
 .back-link:hover {
-    text-decoration: underline; /* Add underline on hover for better interaction feedback */
+    text-decoration: underline;
 }

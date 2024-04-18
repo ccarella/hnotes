@@ -1,31 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
 /* Base styles */
 body {
-    font-family: 'Arial', sans-serif; /* Clean and modern, better for bold statements */
+    font-family: 'Inter', sans-serif; /* Set Inter as the base font for better text clarity */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #FFFFFF; /* White background for the whole app */
-    color: #000; /* Black text for high contrast on white background */
+    background-color: #FFFFFF; /* Maintain white background for the whole app */
+    color: #000; /* Keep black text for high contrast on white background */
 }
 
 header {
-    background-color: #FFF; /* White header to match the body */
-    color: #000; /* Black text for contrast */
+    background-color: #FFF; /* Keep white header to match the body */
+    color: #000; /* Maintain black text for contrast */
     text-align: left;
     padding: 16px 24px;
     font-size: 24px;
     display: flex;
     align-items: center;
-    font-weight: bold;
-    border-bottom: 4px solid #4CAF50; /* Signature green highlight line */
+    font-family: 'Helvetica', Arial, sans-serif; /* Use Helvetica for header, fallback to Arial */
+    font-weight: bold; /* Ensure the header text is bold */
+    border-bottom: 4px solid #4CAF50; /* Maintain the signature green highlight line */
 }
 
 .material-icons {
     margin-right: 16px;
     font-size: 32px;
-    color: #4CAF50; /* Green accents for icons */
+    color: #4CAF50; /* Maintain green accents for icons */
 }
 
 #tabs {
@@ -41,6 +44,7 @@ header {
     color: #000;
     transition: background-color 0.3s;
     font-weight: bold;
+    font-family: 'Inter', sans-serif; /* Ensure tabs use Inter for consistency */
 }
 
 .tab:hover {
@@ -48,7 +52,7 @@ header {
 }
 
 .tab.active {
-    background-color: #4CAF50; /* Green for active tab */
+    background-color: #4CAF50; /* Maintain green for active tab */
 }
 
 .content {
@@ -56,8 +60,9 @@ header {
     flex-grow: 1;
     overflow-y: auto;
     display: none; /* Hide all content sections by default */
-    background-color: #FFFFFF; /* White background for content areas */
-    color: #000; /* Black text for readability */
+    background-color: #FFFFFF; /* Keep white background for content areas */
+    color: #000; /* Maintain black text for readability */
+    font-family: 'Inter', sans-serif; /* Ensure content uses Inter */
 }
 
 .content.active {
@@ -69,16 +74,16 @@ input[type="text"], textarea {
     padding: 8px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 2px solid #000; /* Black borders for contrast on white */
+    border: 2px solid #000; /* Maintain black borders for contrast on white */
     background-color: transparent;
     color: #000;
     font-size: 16px;
-    transition: background-color 0.2s, border-color 0.2s;
+    font-family: 'Inter', sans-serif; /* Ensure inputs use Inter */
 }
 
 input[type="text"]:focus, textarea:focus {
     outline: none;
-    border-color: #4CAF50; /* Green focus color */
+    border-color: #4CAF50; /* Maintain green focus color */
     background-color: #FFFFFF; /* Ensure background remains white */
 }
 
@@ -92,7 +97,7 @@ li {
     align-items: center;
     padding: 10px;
     margin-bottom: 5px;
-    background-color: #FFFFFF; /* White background for list items */
+    background-color: #FFFFFF; /* Maintain white background for list items */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -107,7 +112,7 @@ li.done span {
 
 .delete-icon {
     margin-left: auto;
-    color: #FF0000; /* Bright red for delete icons */
+    color: #FF0000; /* Maintain bright red for delete icons */
     cursor: pointer;
 }
 
@@ -116,7 +121,7 @@ li.done span {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; /* Maintain green */
     color: #000;
     border: none;
     border-radius: 50%;
@@ -130,14 +135,4 @@ li.done span {
 }
 
 .back-link {
-    display: block;
-    margin-bottom: 10px;
-    color: #4CAF50; /* Green link */
-    font-size: 16px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.back-link:hover {
-    text-decoration: underline;
-}
+    display: block
